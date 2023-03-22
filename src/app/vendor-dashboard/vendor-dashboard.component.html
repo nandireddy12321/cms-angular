@@ -1,0 +1,27 @@
+ 
+ <div>
+    <img class="image" src="/assets/images/swig.jpg">
+</div>
+<div class="title">
+    <p>vendordashboard</p>
+</div>
+<div class="vendorDashBoard">
+vendorName: {{vendorname}}<br/>
+vendorId: {{vid.vendorid}}<br/>   
+vendorusername :{{vid.vendorusername}}<br/> 
+vendorpassword :{{vid.vendorpassword}}<br/> 
+vendorcity :{{vid.vendorcity}}<br/> 
+vendorstate :{{vid.vendorstate}}<br/>  
+<br><br/>
+</div>
+<div class="vendor">
+
+
+<a [routerLink]="['/vendorDashBoard',{outlets: {'mphasis': ['showVendor']}}]"> Show Vendor Info</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/vendorDashBoard',{outlets: {'mphasis': ['vendorOrders']}}]"> Show Vendor Orders</a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/vendorDashBoard',{outlets: {'mphasis': ['vendorpendingorders']}}]"> VendorPendingOrders</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/vendorDashBoard',{outlets: {'mphasis': ['acceptorreject']}}]"> Acceptor-reject</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<router-outlet name="mphasis"></router-outlet>
+</div>

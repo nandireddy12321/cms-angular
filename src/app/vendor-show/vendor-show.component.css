@@ -1,0 +1,9 @@
+html,body{
+    margin: 0;
+    height: 100%;
+    
+}
+.head{
+    color: rgb(55, 19, 212);
+    background-color: burlywood;
+}

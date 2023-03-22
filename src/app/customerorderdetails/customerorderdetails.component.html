@@ -1,0 +1,42 @@
+<p>customerorderdetails works!</p>
+
+
+<table align="center">
+  
+  <table border="4">
+    <div class="customerorderdetails">
+    <tr>
+      
+      <th>Orderid</th>
+       <th>Menyid</th>
+      <th>Walletid</th>
+      <th>Vendorid</th>
+      <th>Quantityorder </th>
+      <th>OrderStatus</th>
+      <th>Orderdate</th>
+      <th>Billamount</th>
+      <th> Ordercomments</th>
+      
+
+    </tr>
+    
+  
+    
+   
+    <tr *ngFor="let u of orderdetails">
+        <td>{{u.orderid}} </td>
+        <td>{{u.customerid}} </td>
+        <td>{{u.menuid}} </td>
+        <td>{{u.walletid}} </td>
+        <td>{{u.qtyord}} </td>
+        <td>{{u.orderStatus}} </td>
+        <td>{{u.orderDate}} </td>
+        <td>{{u.billAmount}} </td>
+        <td>{{u.orderComments}} </td>
+        
+    </tr>
+    </div>
+  </table>
+
+</table>
+

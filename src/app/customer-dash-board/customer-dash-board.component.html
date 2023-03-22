@@ -1,0 +1,27 @@
+<div>
+    <img class="image" src="/assets/images/dda.webp">
+</div>
+<div class="title">
+          <p>  CustomerDashBoard</p>
+</div>
+<div class="customerDashBoard">
+Customer Name : {{customerName}}<br/>
+customerid :{{customer.customerid }}<br/>
+customerusername :{{customer.customerusername}}<br/>
+customer password :{{customer.customerpassword}}<br/>
+customer city :{{customer.customercity}}<br/>
+customer state :{{customer.customerstate}}<br/>
+</div>
+<div class="customer"> 
+<a [routerLink]="['/customerDashBoard',{outlets: {'mphasis': ['showRestaurant']}}]"> Show Restaurant</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a [routerLink]="['/customerDashBoard',{outlets: {'mphasis': ['showcustomerwallet']}}]"> ShowCustomerWallet</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/customerDashBoard',{outlets: {'mphasis': ['showCustomer']}}]"> ShowAllCustomer</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/customerDashBoard',{outlets: {'mphasis': ['placeOrder']}}]"> PlaceOrder</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a [routerLink]="['/customerDashBoard',{outlets: {'mphasis': ['customerpendingorders']}}]"> customerpendingorders</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a [routerLink]="['/customerDashBoard',{outlets: {'mphasis': ['customerorderdetails']}}]"> CustomerOrderDetails</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<router-outlet name="mphasis"></router-outlet>
+</div>

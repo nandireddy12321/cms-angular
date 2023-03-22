@@ -1,0 +1,25 @@
+<p>customer-show works!</p>
+
+<table border="3" align="center">
+    <div class="red">
+    <tr>
+        <th>customerid</th>
+        <th>customername</th>
+        <th>customerusername</th>
+        <th>customerpassword</th>
+        <th>customercity</th>
+        <th>customerstate</th>
+    </tr>
+    
+    <tr *ngFor="let c of customs">
+        <th>{{c.customerid}}</th>
+        <th>{{c.customername}}</th>
+        <th>{{c.customerusername}}</th>
+        <th>{{c.customerpassword}}</th>
+        <th>{{c.customercity}}</th>
+        <th>{{c.customerstate}}</th>
+    </tr>
+    </div>
+
+</table>
+

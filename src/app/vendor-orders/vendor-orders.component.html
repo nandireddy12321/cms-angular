@@ -1,0 +1,31 @@
+<p>vendor-orders works!</p>
+
+<table border="3">
+  <div class="red">
+    <tr>
+      <th>Orderid</th>
+      <th>Menuid</th>
+      <th>Walletid</th>
+      <th>Vendorid</th>
+      <th>Quantityorder </th>
+      <th>Orderstatus</th>
+      <th>Orderdate</th>
+      <th>Billamount</th>
+      <th>Ordercomments</th>
+    </tr>
+    
+
+    <tr *ngFor="let u of orderdetails">
+        <td>{{u.orderid}} </td>
+        <td>{{u.customerid}} </td>
+        <td>{{u.walletid}} </td>
+        <td>{{u.vendorid}} </td>
+        <td>{{u.qtyord}} </td>
+        <td>{{u.orderStatus}} </td>
+        <td>{{u.orderDate}} </td>
+        <td>{{u.billAmount}} </td>
+        <td>{{u.orderComments}} </td>
+        
+    </tr>
+  </div>
+  </table>

@@ -1,0 +1,11 @@
+<p>acceptor-reject works!</p>
+<div class="acceptor-reject">
+
+VendorID :
+<input type ="text" name="vid" [(ngModel)]="vid"/><br><br/>
+Order ID :
+<input type ="number" name="oid" [(ngModel)]="oid"/><br><br/>
+Accept/Reject :
+<input type ="text" name="status" [(ngModel)]="status"/><br><br/>
+<input type ="button" value="Accept/Reject" (click)="decide()"/>
+</div>

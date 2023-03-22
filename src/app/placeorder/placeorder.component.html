@@ -1,0 +1,20 @@
+<p>placeorder works!</p>
+<div class="placeorder">
+<form name="placeOrder">
+    <p>Customer Id :</p> 
+    <input type="text" name="orderDetails.customerId" [(ngModel)]="Orderdetails.customerid" /> &nbsp;
+    <p>Vendor Id :</p> 
+    <input type="text" name="orderDetails.vendorId" [(ngModel)]="Orderdetails.vendorid" /> &nbsp;
+    <p>Menu Id :</p> 
+    <input type="text" name="orderDetails.menuId" [(ngModel)]="Orderdetails.menuid" />   &nbsp;
+    <p>Wallet Id :</p> 
+    <input type="text" name="orderDetails.walletId" [(ngModel)]="Orderdetails.walletid" />  &nbsp;
+    <p>Quantity order :</p> 
+    <input type="number" name="orderDetails.qtyord" [(ngModel)]="Orderdetails.qtyord" />  &nbsp;
+    <p>Order Date :</p> 
+    <input type="date" name="orderDetails.orderDate" [(ngModel)]="Orderdetails.orderDate" />  &nbsp;
+    <p>Order Comments :</p> 
+    <input type="text" name="orderDetails.orderComments" [(ngModel)]="Orderdetails.orderComments" /> &nbsp;
+    <input type="button" value="submit" (click)="placeOrder()" text="Place Order" /> 
+</form>
+</div>

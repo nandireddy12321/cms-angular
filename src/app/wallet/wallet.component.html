@@ -1,0 +1,18 @@
+<p>wallet works!</p>
+<table border="3" align="center">
+
+    <tr>
+        <th>walletid</th>
+        <th>customerid</th>
+        <th>wallettype</th>
+        <th>walletamount</th>
+    </tr>
+
+    <tr *ngFor="let w of wallets">
+        <th>{{w.walletid}}</th>
+        <th>{{w.customerid}}</th>
+        <th>{{w.wallettype}}</th>
+        <th>{{w.walletamount}}</th>
+        
+    </tr>
+</table>

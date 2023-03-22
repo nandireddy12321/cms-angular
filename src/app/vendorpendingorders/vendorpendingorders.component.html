@@ -1,0 +1,30 @@
+<p>vendorpendingorders works!</p>
+<table border="3">
+  <div class="red">
+    <tr>
+      <th>Orderid</th>
+      <th>Menuid</th>
+      <th>Walletid</th>
+      <th>Vendorid</th>
+      <th>Quantityorder </th>
+      <th>Orderstatus</th>
+      <th>Orderdate</th>
+      <th>Billamount</th>
+      <th>Ordercomments</th>
+
+    </tr>
+  
+    <tr *ngFor="let v of pendingdetails">
+        <td>{{v.orderid}} </td>
+        <td>{{v.customerid}} </td>
+        <td>{{v.walletid}} </td>
+        <td>{{v.vendorid}} </td>
+        <td>{{v.qtyord}} </td>
+        <td>{{v.orderStatus}} </td>
+        <td>{{v.orderDate}} </td>
+        <td>{{v.billAmount}} </td>
+        <td>{{v.orderComments}} </td>
+        <td><input type="button" value="Accept Or Reject" (click)="acceptorreject(v.orderid,v.vendorid)"/></td> 
+    </tr>
+  </div>
+  </table>
