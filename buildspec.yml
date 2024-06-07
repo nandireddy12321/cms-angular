@@ -16,7 +16,7 @@ phases:
   post_build:
     commands:
       # Log in to AWS CodeArtifact using AWS CLI
-      - aws codeartifact login --tool npm --repository lokiiii --domain spotify
+      - aws codeartifact login --tool npm --repository spotify --domain lokiiii
       # Print whether login succeeded or not
       - if [ $? -eq 0 ]; then echo "Login to CodeArtifact succeeded"; else echo "Login to CodeArtifact failed"; fi
       # Push Docker image to AWS CodeArtifact
