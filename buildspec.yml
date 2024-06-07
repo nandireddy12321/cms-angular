@@ -20,6 +20,7 @@ phases:
       # Print whether login succeeded or not
       - if [ $? -eq 0 ]; then echo "Login to CodeArtifact succeeded"; else echo "Login to CodeArtifact failed"; fi
       # Push Docker image to AWS CodeArtifact
-      - docker tag cmswebapi:latest 891377224117.d.codeartifact.ap-south-1.amazonaws.com/lokiiii/spotify:$CODEBUILD_BUILD_NUMBER
+      - docker tag cmswebapi:latest 891377224117.d.codeartifact.ap-south-1.amazonaws.com/lokiiii/spotify:${CODEBUILD_BUILD_NUMBER}
+
       # Push Docker image to AWS CodeArtifact
-      - docker push 891377224117.d.codeartifact.ap-south-1.amazonaws.com/lokiiii/spotify:$CODEBUILD_BUILD_NUMBER
+      - docker push 891377224117.d.codeartifact.ap-south-1.amazonaws.com/lokiiii/spotify:${CODEBUILD_BUILD_NUMBER}
