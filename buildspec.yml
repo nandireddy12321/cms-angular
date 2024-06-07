@@ -6,10 +6,10 @@ phases:
       # Print the branch name
       #- echo "Branch Name: ${CODEBUILD_SOURCE_VERSION#refs/heads/}"
       # Checkout the source code
-      - git clone https://github.com/nandireddy12321/Spotify.git
-      - cd Spotify
+      - git clone https://github.com/nandireddy12321/cms-angular.git
+      
       # Build Docker image
-      - docker build -t spotify .
+      - docker build -t cmswebapi .
       # Print Docker image name with tag of build number
       #- echo "Docker Image Name: spotify:$CODEBUILD_BUILD_NUMBER"
 
