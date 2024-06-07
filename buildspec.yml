@@ -15,12 +15,9 @@ phases:
 
   post_build:
     commands:
-      # Log in to AWS CodeArtifact using AWS CLI
-      - aws codeartifact login --tool npm --repository spotify --domain lokiiii
-      # Print whether login succeeded or not
-      - if [ $? -eq 0 ]; then echo "Login to CodeArtifact succeeded"; else echo "Login to CodeArtifact failed"; fi
-      # Push Docker image to AWS CodeArtifact
-      - docker tag cmswebapi:latest 891377224117.d.codeartifact.ap-south-1.amazonaws.com/lokiiii/spotify:${CODEBUILD_BUILD_NUMBER}
-
-      # Push Docker image to AWS CodeArtifact
-      - docker push 891377224117.d.codeartifact.ap-south-1.amazonaws.com/lokiiii/spotify:${CODEBUILD_BUILD_NUMBER}
+      # Log in to AWS Elastic Container Registry (ECR) using AWS CLI
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 891377224117.dkr.ecr.ap-south-1.amazonaws.com
+      # Tag Docker image with ECR repository URL and build number
+      - docker tag cmswebapi:latest 891377224117.dkr.ecr.ap-south-1.amazonaws.com/cmswebapi:${CODEBUILD_BUILD_NUMBER}
+      # Push Docker image to Amazon ECR
+      - docker push 891377224117.dkr.ecr.ap-south-1.amazonaws.com/cmswebapi:${CODEBUILD_BUILD_NUMBER}
