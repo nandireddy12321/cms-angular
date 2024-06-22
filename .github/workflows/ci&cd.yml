@@ -65,8 +65,8 @@ jobs:
         
     - name: activate service account key
       run: | 
-        gcloud auth activate-service-account --key-file=/tmp/key.json
-        gcloud config set project carbon-pride-425609-g0   # Replace with your GCP project ID
+        gcloud auth activate-service-account --key-file=${{ secrets.GCP_SA_KEY }}
+        gcloud config set project carbon-pride-425609-g0   
 
     - name: Get GKE credentials
       run: |
