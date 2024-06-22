@@ -13,8 +13,8 @@ spec:
         app: cms-angular
     spec:
       containers:
-      - name: my-app
-        image: cmsangular:10
+      - name: cmswebappcontainer
+        image: ${{ env.DOCKER_IMAGE }}
         imagePullPolicy: Always
         ports:
         - containerPort: 8083
