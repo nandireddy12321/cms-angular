@@ -48,9 +48,7 @@ jobs:
     needs: build-and-push-image
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
+    
     - name: Set up Google Cloud SDK
       uses: google-github-actions/setup-gcloud@v0.4.0
       with:
@@ -63,6 +61,10 @@ jobs:
     - name: Get GKE credentials
       run: |
         gcloud container clusters get-credentials loki-cluster-pdv --zone us-central1-c --project carbon-pride-425609-g0
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
 
     - name: Deploy to GKE
       run: |
