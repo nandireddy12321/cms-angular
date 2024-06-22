@@ -84,8 +84,21 @@ jobs:
       run: |
         docker images ${{ env.DOCKER_IMAGE }}
 
-
+    - name: Replace Docker image in deployment YAML
+      run: |
+        sed -i "s|\${{ env.DOCKER_IMAGE }}|${{ env.DOCKER_IMAGE }}|g" kubernetes/deployment.yml
     - name: Deploy to GKE
       run: |
         kubectl apply -f kubernetes/service.yml
         kubectl apply -f kubernetes/deployment.yml
+
+    - name: Check deployment status
+      run: |
+          kubectl get pods --all-namespaces
+          kubectl describe pod <pod-name> -n <namespace>
+          kubectl logs <pod-name> -n <namespace>
+
+    - name: Handle deployment failure
+      if: ${{ failure() }}
+      run: |
+          echo "Deployment failed. Review logs for more details."
