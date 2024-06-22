@@ -65,7 +65,9 @@ jobs:
         
     - name: activate service account key
       run: | 
-        echo "${{ secrets.GCP_SA_KEY }}" |  > key.json
+        GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        echo "$GCP_SA_KEY" | base64 --decode > key.json
+        
         cat key.json
         gcloud auth activate-service-account --key-file=key.json
         gcloud config set project carbon-pride-425609-g0   
