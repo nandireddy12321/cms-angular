@@ -68,5 +68,5 @@ jobs:
 
     - name: Deploy to GKE
       run: |
-        kubectl apply -f k8's/service.yml
-        kubectl apply -f k8's/deployment.yml
+        kubectl apply -f kubernetes/service.yml
+        kubectl apply -f kubernetes/deployment.yml
