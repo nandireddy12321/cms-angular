@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: CI/CD to GKE
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  build:
+  build-and-push-image:
     runs-on: ubuntu-latest
 
     steps:
@@ -43,3 +43,25 @@ jobs:
     - name: Log out from Docker Hub
       run: docker logout
 
+  deploy-to-gke:
+    runs-on: ubuntu-latest
+    needs: build-and-push-image
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Google Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+        project_id: carbon-pride-425609-g0
+
+    - name: Get GKE credentials
+      run: |
+        gcloud container clusters get-credentials loki-cluster-pdv --zone us-central1-c
+
+    - name: Deploy to GKE
+      run: |
+        kubectl apply -f k8s/service.yml
+        kubectl apply -f k8s/deployment.yml

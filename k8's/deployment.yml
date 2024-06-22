@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cms-angular
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cms-angular
+  template:
+    metadata:
+      labels:
+        app: cms-angular
+    spec:
+      containers:
+      - name: my-app
+        image: ${{ secrets.DOCKER_USERNAME }}/cmsangular:${GITHUB_RUN_NUMBER}
+        ports:
+        - containerPort: 8083
