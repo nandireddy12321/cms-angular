@@ -57,6 +57,12 @@ jobs:
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         project_id: carbon-pride-425609-g0
 
+    
+    - name: Authenticate with Google Cloud SDK
+      run: |
+        gcloud auth activate-service-account --key-file=${{ secrets.GCP_SA_KEY }}
+        gcloud config set project carbon-pride-425609-g0   # Replace with your GCP project ID
+
     - name: Get GKE credentials
       run: |
         gcloud container clusters get-credentials loki-cluster-pdv --zone us-central1-c
