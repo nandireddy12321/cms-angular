@@ -17,4 +17,4 @@ spec:
         image: lokeshreddy12321/cmsangular:24
         imagePullPolicy: Always
         ports:
-        - containerPort: 8083
+        - containerPort: 80
