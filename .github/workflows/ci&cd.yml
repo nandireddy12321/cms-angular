@@ -76,7 +76,9 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     
-
+   
+    - name: Checkout repository
+      uses: actions/checkout@v2
     
     - name: Deploy to GKE
       run: |
