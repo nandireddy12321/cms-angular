@@ -82,11 +82,12 @@ jobs:
     
     - name: Deploy to GKE
       run: |
-        kubectl apply -f kubernetes/ingresscontroller.yml
+        
         kubectl apply -f kubernetes/cms-service.yml
         kubectl apply -f kubernetes/spotify-service.yml
         kubectl apply -f kubernetes/spotify-deploy.yml
         kubectl apply -f kubernetes/cmsangular-deploy.yml
+        kubectl apply -f kubernetes/ingresscontroller.yml
 
     - name: Check deployment status
       run: |
