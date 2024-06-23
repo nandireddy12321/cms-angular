@@ -13,8 +13,8 @@ spec:
         app: cms-angular
     spec:
       containers:
-      - name: cmswebappcontainer
+      - name: cmswebapp
         image: lokeshreddy12321/cmsangular:24
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 8081

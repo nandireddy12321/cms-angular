@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webappingress
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /cms-angular
+            backend:
+              service:
+                name: cms-angular
+                port:
+                  number: 8081  
+          - pathType: Prefix
+            path: /spotify
+            backend:
+              service:
+                name: spotify
+                port:
+                  number: 8083  

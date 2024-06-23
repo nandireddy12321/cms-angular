@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spotify
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spotify
+  template:
+    metadata:
+      labels:
+        app: spotify
+    spec:
+      containers:
+      - name: spotifywebapp
+        image: lokeshreddy12321/lokiangularspotify:latestt
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8081
