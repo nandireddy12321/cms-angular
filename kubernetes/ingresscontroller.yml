@@ -7,10 +7,10 @@ spec:
     - http:
         paths:
           - pathType: Prefix
-            path: /cms-angular
+            path: /cms
             backend:
               service:
-                name: cms-angular
+                name: cmsangular
                 port:
                   number: 8081  
           - pathType: Prefix
