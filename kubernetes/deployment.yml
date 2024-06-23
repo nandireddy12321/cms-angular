@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: cmswebappcontainer
-        image: cmsangular:24
+        image: lokeshreddy12321/cmsangular:24
         imagePullPolicy: Always
         ports:
         - containerPort: 8083
