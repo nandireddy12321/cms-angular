@@ -12,11 +12,11 @@ spec:
               service:
                 name: cmsangular
                 port:
-                  number: 8081  
+                  number: 80 
           - pathType: Prefix
             path: /spotify
             backend:
               service:
                 name: spotify
                 port:
-                  number: 8083  
+                  number: 80
