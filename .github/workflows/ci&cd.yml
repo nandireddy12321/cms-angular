@@ -90,8 +90,7 @@ jobs:
 
     - name: Check deployment status
       run: |
-          kubectl get pods --all-namespaces
-          kubectl describe pod <pod-name> -n <namespace>
-          kubectl logs <pod-name> -n <namespace>
+          kubectl get pods 
+          
 
     
