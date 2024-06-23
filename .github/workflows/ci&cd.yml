@@ -88,6 +88,8 @@ jobs:
         kubectl apply -f kubernetes/spotify-deploy.yml
         kubectl apply -f kubernetes/cmsangular-deploy.yml
         kubectl apply -f kubernetes/ingresscontroller.yml
+        kubectl apply -f kubernetes/service.yml
+        kubectl apply -f kubernetes/deployment.yml
 
     - name: Check deployment status
       run: |

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cms-angular
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cms-angular
+  template:
+    metadata:
+      labels:
+        app: cms-angular
+    spec:
+      containers:
+      - name: cmswebapp
+        image: lokeshreddy12321/cmsangular:24
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8081
